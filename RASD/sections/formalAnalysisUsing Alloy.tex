@@ -1,0 +1,62 @@
+\section{Formal Analysis Using Alloy}
+\input{codes/alloy.sty}
+
+\lstdefinestyle{alloy}{
+	commentstyle=\itshape,
+	keywordstyle=\bfseries,
+	stringstyle=\itshape,
+}
+
+% define command for inline use; usage: \alloy|sig A {f: some B}|
+\def\alloy{\lstinline[
+	language=alloy,
+	style=alloy,
+	basicstyle=\ttfamily\small
+]}
+
+\renewcommand{\ttdefault}{pcr}  % font type with bfseries and ttfamily
+% general definitions
+\lstset{
+	basicstyle=\ttfamily\large
+}
+
+\subsection{Alloy Code}
+\lstinputlisting[language=alloy,breaklines=true]{codes/alloy_DREAM.als}
+\clearpage
+
+\subsection{Meta Model}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textheight,keepaspectratio, angle=90]{figures/CreateFarmland1.png}
+  \caption{Insert Land}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textheight,keepaspectratio, angle=90]{figures/CreateProblem.png}
+  \caption{Create Problem}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textheight,keepaspectratio, angle=90]{figures/CreateDiscussion.png}
+  \caption{Create Discussion}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textheight,keepaspectratio, angle=90]{figures/joinForum.png}
+  \caption{Join Forum}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textheight,keepaspectratio, angle=90]{figures/SelectBestandWorst.png}
+  \caption{Select Best and Worst Farmers}
+\end{figure}
+\clearpage
+%\subsection{Results of Assertions}
+\subsection{Results of Predicates}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\textheight,keepaspectratio, angle=0]{figures/Executing.png}
+  \caption{Executing Results}
+\end{figure}
+\clearpage
