@@ -1,62 +1,191 @@
-\section{Formal Analysis Using Alloy}
-\input{codes/alloy.sty}
+\section{Introduction}
+\subsection{Purpose}
+\paragraph{}
+This document focuses on Requirements Analysis and Specification Document (RASD) and contains the description of the main goals, the domain and its representation through some models, the analysis
+of the scenario with the uses cases that describe them, the list of the most important requirements and specifications that characterize the development of the software described below.
+\paragraph{}
+It also includes the research about the interfaces, functional and non-functional requirements and the attributes that distinguish the quality of the system. 
+\paragraph{}
+This document has the purpose to guide the developer in the realization of the software called DREAM, Data-dRiven PrEdictive FArMing in Telengana.
+\paragraph{}
+Finally, to understand better the development of the document, it contains the history that describes how it is made, with the references used and the description of its structure.
 
-\lstdefinestyle{alloy}{
-	commentstyle=\itshape,
-	keywordstyle=\bfseries,
-	stringstyle=\itshape,
-}
+\subsection{Scope}
+Here a review of which is the scope of the application is made referring to what has been stated in the RASD document.
+The goal of this app is to design, develop and demonstrate 
+anticipatory governance models for food systems using digital public goods and community-centric approaches to strengthen data-driven policy making in the state of Telengana.
+\paragraph{Basic service} Farmers can visualize data relevant to them and also allow farmers to follow the progress of their lands and the details about the irrigation and products based on the information that the application gave them. Also, they can insert the data about their lands and also the updates about their products.
+\paragraph{Advance Function1} Second functionality point out about the farmers that can create discussions with other farmers.  Also, they can insert any problem that they are faced.
 
-% define command for inline use; usage: \alloy|sig A {f: some B}|
-\def\alloy{\lstinline[
-	language=alloy,
-	style=alloy,
-	basicstyle=\ttfamily\small
-]}
+\newpage
+    \subsubsection{World Phenomena}
+    \newcommand{\Vline}{\color{tableBorderColor} \vrule width 1pt}
+\def\arraystretch{1.5}
 
-\renewcommand{\ttdefault}{pcr}  % font type with bfseries and ttfamily
-% general definitions
-\lstset{
-	basicstyle=\ttfamily\large
-}
+\arrayrulecolor{tableBorderColor}
+\setlength\arrayrulewidth{1pt}
+\rowcolors{2}{white}{tableHighlightColor}
+\setlength\LTleft{0pt}
 
-\subsection{Alloy Code}
-\lstinputlisting[language=alloy,breaklines=true]{codes/alloy_DREAM.als}
-\clearpage
+    \begin{longtable}{!\Vline c !\Vline l !\Vline} 
+    \hline
+    \textbf{WP1} & Farmers want to insert data  \\
+    \textbf{WP2} & Farmers want to start discussions  \\  
+    \textbf{WP3} & Sensors sends data  \\
+    \textbf{WP4} & Water irrigation system sends the data  \\
+    \textbf{WP5} & Farmers update data about their lands  \\
+    \textbf{WP6} & Policy Maker choose the best farmer  \\
+    \textbf{WP5} & Policy Maker choose the worst farmer  \\
+    \hline
+\end{longtable}
+%\clearpage
 
-\subsection{Meta Model}
+\subsubsection{Shared phenomena}
+\renewcommand{\Vline}{\color{tableBorderColor} \vrule width 1pt}
+\def\arraystretch{1.5}
+\arrayrulecolor{tableBorderColor}
+\setlength\arrayrulewidth{1pt}
+\rowcolors{2}{white}{tableHighlightColor}
+\setlength\LTleft{0pt}
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.9\textheight,keepaspectratio, angle=90]{figures/CreateFarmland1.png}
-  \caption{Insert Land}
-\end{figure}
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.9\textheight,keepaspectratio, angle=90]{figures/CreateProblem.png}
-  \caption{Create Problem}
-\end{figure}
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.9\textheight,keepaspectratio, angle=90]{figures/CreateDiscussion.png}
-  \caption{Create Discussion}
-\end{figure}
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.9\textheight,keepaspectratio, angle=90]{figures/joinForum.png}
-  \caption{Join Forum}
-\end{figure}
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.9\textheight,keepaspectratio, angle=90]{figures/SelectBestandWorst.png}
-  \caption{Select Best and Worst Farmers}
-\end{figure}
-\clearpage
-%\subsection{Results of Assertions}
-\subsection{Results of Predicates}
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.6\textheight,keepaspectratio, angle=0]{figures/Executing.png}
-  \caption{Executing Results}
-\end{figure}
-\clearpage
+\begin{longtable}{ !\Vline c !\Vline l !\Vline}
+    \hline
+    \textbf{SP1} & Receive a notification about suggestions for the land \\
+    \textbf{SP2} & Receive a notification from policy maker \\
+    \textbf{SP4} & Farmers choose which add products to the app\\
+    \textbf{SP5} & Farmers add their lands to the app \\
+    \textbf{SP6} & Receive information related to forum \\
+    \textbf{SP7} & Suggestions for farmers to improve their performance \\
+    \hline
+\end{longtable}
+
+\subsubsection{Goals}
+% Goal table 
+\renewcommand{\Vline}{\color{tableBorderColor} \vrule width 1pt}
+\def\arraystretch{1.5}
+
+\arrayrulecolor{tableBorderColor}
+\setlength\arrayrulewidth{1pt}
+\rowcolors{2}{white}{tableHighlightColor}
+\setlength\LTleft{0pt}
+
+\begin{longtable}{ !\Vline c !\Vline l !\Vline}
+    \hline
+    \textbf{G1} & Allow farmers to see the details of their farm lands \\
+    \textbf{G2} & Allow policy makers to see the details of different lands \\
+    \textbf{G3} & Allow policy makers to identify farmers who are performing well \\
+    \textbf{G4} & Allow policy makers to identify farmers who need help \& performing particularly badly \\
+    \textbf{G5} & Allow farmers to create new forum  \\
+    \textbf{G6} & Allow farmers to join in discussions \\
+    \textbf{G7} & Allow farmers to send message in discussions \\
+    \textbf{G8} & Allow farmers to leave in discussions \\
+    \textbf{G9} & Allow farmers to create new forum  \\
+    \textbf{G10} & Allow farmers to ask problems \\
+    \textbf{G11} & Allow farmers to answer to problems \\
+    \textbf{G12} & Show farmers some personal suggestions \\
+    \hline
+\end{longtable}
+\newpage
+\subsection{Definitions, Acronyms, Abbreviations}
+\subsubsection{Definitions}
+
+%\arrayrulecolor{tableBorderColor}
+\setlength\arrayrulewidth{1pt}
+%\rowcolors{2}{white}{tableHighlightColor}
+\setlength\LTleft{0pt}
+\begin{longtable}{ !\Vline l !\Vline l !\Vline}
+    \hline
+    \textbf{Policy Maker}   & A person who observe farmers progress\\
+    \textbf{Farmers}        & A person who has a farm land on Telengana\\
+    \textbf{Water-Irrigation System} & An organization who observe the amount of used water by farmers\\
+    \textbf{Sensor}         & A device that sense a physical phenomena\\
+   % \textbf{Ticket Machine} & A stand that clerk can get and print ticket\\
+    %\textbf{Scanner}        & A device that scans QR code\\
+    %\textbf{QR Code}        & is a type of matrix barcode (or two-dimensional barcode)\\
+    \hline
+\end{longtable}
+%\clearpage
+
+\subsubsection{Acronyms}
+
+\arrayrulecolor{tableBorderColor}
+\setlength\arrayrulewidth{1pt}
+\rowcolors{2}{white}{tableHighlightColor}
+\setlength\LTleft{0pt}
+\begin{longtable}{ !\Vline l !\Vline l !\Vline}
+    \hline
+    \textbf{RASD}   & Requirement Analysis and Specification Document\\
+    \textbf{GPS}    & Global Positioning System\\
+    \textbf{app}    & Application\\
+    \textbf{API}    & Application Programming Interface\\
+    \textbf{DDoS}   & Distributed Denial of Service\\
+    \hline
+\end{longtable}
+
+\subsubsection{Abbreviations}
+
+%\arrayrulecolor{tableBorderColor}
+\setlength\arrayrulewidth{1pt}
+%\rowcolors{2}{white}{tableHighlightColor}
+\setlength\LTleft{0pt}
+\begin{longtable}{ !\Vline c !\Vline l !\Vline}
+    \hline
+    \textbf{WPn}    & World Phenomenon number n\\
+    \textbf{SPn}    & Shared Phenomenon  number n\\
+    \textbf{Gn}     & Goal number n\\
+    \textbf{BS}     & Basic Service of DREAM\\
+    \textbf{AF1}    & Advance Function 1 of DREAM\\
+    %\textbf{AF2}    & Advance Function 2 of DREAM\\
+    \textbf{Rn}     & Requirement number n\\
+    \textbf{Dn}     & Domain assumption number n\\
+    \textbf{Cn}     & Constraint number n\\
+    \hline
+\end{longtable}
+\newpage
+\subsection{Revision history}
+
+\arrayrulecolor{tableBorderColor}
+\setlength\arrayrulewidth{1pt}
+\rowcolors{2}{white}{tableHighlightColor}
+\setlength\LTleft{0pt}
+\begin{longtable}{ !\Vline c !\Vline l !\Vline}
+    \hline
+    \textbf{Date}   & \textbf{Modifications}\\
+    \textbf{05/12/2020}     & First document\\
+    \textbf{12/12/2020}     
+                            &  \begin{minipage} [t] {0.9\textwidth} 
+      \begin{itemize}
+      \item Adding use cases 
+      \item Update Class Diagram.
+     \end{itemize} 
+     \vspace{0.5em}
+    \end{minipage}
+    
+    \\
+    \textbf{22/12/2020}     & Update Alloy\\
+    \hline
+\end{longtable}
+
+\subsection{Reference Documents}
+\begin{itemize}
+    \item Specification Document: "R\&DD Assignment A.Y. 2021-2022.pdf"
+    \item Slides of the lectures.
+\end{itemize}
+\subsection{Document Structure}
+This document is divided in six sections.
+\begin{itemize}
+    \item \textbf{Chapter 1} describes the purpose of this document and contains the description of the given problem we want to solve with our application. We state the goals of DREAM and we describe the phenomena related to the "world" where it will be used and the ones related to our system.
+    
+    \item \textbf{Chapter 2} is about presenting the product perspective, including details on how we abstracted the problem using a class diagram. We describe the main functions of the application using also some state diagrams. We resent the needs of the potential users of the application. Finally we state the domain assumptions and the dependencies.
+    
+    \item \textbf{Chapter 3} contains the external interface requirements, including: user interfaces, hardware interfaces, software interfaces and communication interfaces. We define the functional requirements and the use cases. We use class diagrams and sequence diagrams to describe better the use cases and the interaction between different parts of the system.  Lastly we include the performance requirements and the software system attributes.
+    
+    \item \textbf{Chapter 4} contains a model written using the Alloy language in order to describe formally the application
+    
+    \item \textbf{Chapter 5} contains the tables where we reported for each group member the hour spent working on the project
+    
+    \item \textbf{Chapter 6} include the reference documents.
+ \end{itemize}
+
+\vfill
+
