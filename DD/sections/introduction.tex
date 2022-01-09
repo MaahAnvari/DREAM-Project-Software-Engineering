@@ -1,0 +1,127 @@
+\section{Introduction}
+
+\subsection{Purpose}
+\paragraph{}
+This is the Design Document (DD) of DREAM application. The purpose of this document is to discuss more technical aspects regarding architectural and design choices that must be made, so as to follow well-oriented implementation and testing processes. This document is to provide more technical and detailed information about the software discussed in the RASD document.\\
+In this DD we present hardware and software architecture of the system in terms of components and interactions among those components. Furthermore, this document describes a set of design characteristics required for the implementation by introducing constraints and quality attributes.
+It also gives a detailed presentation of the implementation plan, integration plan and the testing plan.\\
+In this document we mostly talk about:
+\begin{itemize}
+    \item The High-level architecture of the system.
+    \item Main components of the system.
+    \item Interfaces provided by the components.
+    \item Design patterns.
+    \item final representation 
+\end{itemize}
+
+\subsection{Scope}
+
+The software wants give them the possibility to see the details of their lands and the predictions, start discussions and ask their problems.
+\paragraph{Basic service} Farmers can visualize data relevant to them and also allow farmers to follow the progress of their lands and the details about the irrigation and products based on the information that the application gave them. Also, they can insert the data about their lands and also the updates about their products.
+\paragraph{Advance Function1} Second functionality point out about the farmers that can create discussions with other farmers.  Also, they can insert any problem that they are faced.
+\clearpage
+\subsection{Definitions, Acronyms, Abbreviations}
+\subsubsection{Definitions}
+\vspace{0.5cm}
+\arrayrulecolor{tableBorderColor}
+\setlength\arrayrulewidth{1pt}
+\rowcolors{2}{white}{tableHighlightColor}
+\setlength\LTleft{0pt}
+\begin{longtable}{ !\Vline l !\Vline l !\Vline}
+    \hline
+     \textbf{Policy Maker}   & A person who observe farmers progress\\
+    \textbf{Farmers}        & A person who has a farm land on Telengana\\
+    \textbf{Water-Irrigation System} & An organization who observe the amount of used water\\
+    \textbf{Sensor}         & A device that sense a physical phenomena\\
+    \hline
+\end{longtable}
+
+\subsubsection{Acronyms}
+
+\arrayrulecolor{tableBorderColor}
+\setlength\arrayrulewidth{1pt}
+\rowcolors{2}{white}{tableHighlightColor}
+\setlength\LTleft{0pt}
+\begin{longtable}{ !\Vline l !\Vline l !\Vline}
+    \hline
+    \textbf{DD}     & Design Document\\
+    \textbf{UI}     & User Interface\\
+    \textbf{HTTP}   & Hypertext Transfer Protocol\\
+    \textbf{HTTPS}   & Hypertext Transfer Protocol Over Secure Socket Layer\\
+    \textbf{REST}   & Representation State Transfer\\
+    \textbf{JSON}   & JavaScript Object Notation\\
+    \textbf{RASD}   & Requirement Analysis and Specification Document\\
+    \textbf{GPS}    & Global Positioning System\\
+    \textbf{App}    & Application\\
+    \textbf{API}    & Application Programming Interface\\
+    \textbf{DBMS}    & Database Management System\\
+    \textbf{ODBC}    & Open Database Connectivity\\
+    \textbf{MVC}    & Model, View, Controller\\
+    \textbf{SDK}    & Software Development Kit\\
+    \hline
+\end{longtable}
+
+\subsubsection{Abbreviations}
+
+\arrayrulecolor{tableBorderColor}
+\setlength\arrayrulewidth{1pt}
+\rowcolors{2}{white}{tableHighlightColor}
+\setlength\LTleft{0pt}
+\begin{longtable}{ !\Vline c !\Vline l !\Vline}
+    \hline
+    \textbf{BS}     & Basic Service of DREAM\\
+    \textbf{AF1}    & Advance Function 1 of DREAM\\
+    \textbf{Rn}     & Requirement number n\\
+    \hline
+\end{longtable}
+\clearpage
+\subsection{Revision history}
+
+\arrayrulecolor{tableBorderColor}
+\setlength\arrayrulewidth{1pt}
+\rowcolors{2}{white}{tableHighlightColor}
+\setlength\LTleft{0pt}
+\begin{longtable}{ !\Vline c !\Vline l !\Vline}
+    \hline
+    \textbf{Date}   & \textbf{Modifications}\\
+    \textbf{09/01/2021}     & First version\\
+    % \textbf{23/12/2020}     & \begin{minipage} [t] {0.9\textwidth} 
+    %   \begin{itemize}
+    %   \item Adding alloy models and alloy code.
+    %   \item Update Class Diagram.
+    %   \item Adding Mockup images.
+    %  \end{itemize} 
+    %  \vspace{0.5em}
+    % \end{minipage}
+    \hline
+\end{longtable}
+
+
+\subsection{Reference Documents}
+
+\begin{itemize}
+    \item Specification Document: "R\&DD Assignment A.Y. 2021-2022.pdf"
+    \item Slides of the lectures.
+\end{itemize}
+
+\subsection{Document Structure}
+This document is divided in seven sections.
+\begin{itemize}
+    \item \textbf{Chapter 1} describes the scope and purpose of the DD, including the structure of the document and the set of definitions, acronyms and abbreviations used.
+    
+    \item \textbf{Chapter 2} contains the architectural design choice, it includes all the components, the interfaces, the technologies (both hardware and software) used for the development of the application. It also includes the main functions of the interfaces and the processes in which they are utilised (Runtime view and component interfaces). Finally, there is the explanation of the architectural patterns chosen with the other design decisions.
+    
+    \item \textbf{Chapter 3} shows how the user interface should be on the mobile and web application.
+    
+    \item \textbf{Chapter 4} describes the connection between the RASD and the DD, showing the matching between requirements described previously with the elements which compose the architecture of the application.
+    
+    \item \textbf{Chapter 5} traces a plan for the development of components to maximize the efficiency of the developer team and the quality controls team. It is divided in two sections: implementation and integration. It also includes the testing strategy.
+    
+    \item \textbf{Chapter 6} shows the effort spent for each member of the group.
+    
+    \item \textbf{Chapter 7} include the reference documents.
+ \end{itemize}
+
+\vfill
+
+\clearpage
